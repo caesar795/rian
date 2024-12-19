@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Add Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Add Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+        }
+
+        nav {
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Adding shadow to navbar */
+        }
+
+        section#kontak {
+            background-color: #2d3748; /* Dark gray for the kontak section */
+            color: #edf2f7; /* Light text color */
+        }
+
+        h3 {
+            color: #fbbf24; /* Yellow for the section heading */
+        }
+
+        .contact-info i {
+            color: #fbbf24; /* Yellow color for icons */
+        }
+
+        .contact-info p {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="bg-blue-800 bg-opacity-80 rounded-lg shadow-lg px-6 py-4 fixed top-5 left-5 right-5 z-10 flex justify-between items-center">
+        <a href="#" class="text-yellow-400 font-bold text-lg">Marina Cafe</a>
+        <div class="hidden md:flex space-x-6">
+            <a href="home.html" class="hover:text-yellow-400 transition">Home</a>
+            <a href="menu.html" class="hover:text-yellow-400 transition">Menu</a>
+            <a href="kontak.html" class="hover:text-yellow-400 transition">Kontak</a>
+            <a href="alamat.html" class="hover:text-yellow-400 transition">Alamat</a>
+        </div>
+        <button id="hamburger-btn" class="md:hidden text-white text-xl">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Kontak Section -->
+    <section id="kontak" class="py-12">
+        <h3 class="text-3xl font-bold text-center mb-6">Hubungi Kami</h3>
+        <div class="contact-info text-center">
+            <p><i class="fas fa-phone-alt"></i> Telepon: +62 812 3456 7890</p>
+            <p><i class="fas fa-envelope"></i> Email: info@marinacafe.com</p>
+        </div>
+    </section>
+</body>
+</html>

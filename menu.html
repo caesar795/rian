@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Marina Cafe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        li:hover {
+            color: #facc15; /* Warna kuning */
+            transform: scale(1.02);
+            transition: all 0.3s ease;
+        }
+    </style>
+    <!-- Navbar -->
+<nav class="bg-blue-800 bg-opacity-80 rounded-lg shadow-lg px-6 py-4 fixed top-5 left-5 right-5 z-10 flex justify-between items-center">
+  <a href="#" class="text-yellow-400 font-bold text-lg">Marina Cafe</a>
+  <div class="hidden md:flex space-x-6">
+    <a href="home.html" class="hover:text-yellow-400 transition">Home</a>
+    <a href="menu.html" class="hover:text-yellow-400 transition">Menu</a>
+    <a href="kontak.html" class="hover:text-yellow-400 transition">Kontak</a>
+    <a href="alamat.html" class="hover:text-yellow-400 transition">Alamat</a>
+  </div>
+  <button id="hamburger-btn" class="md:hidden text-white text-xl">
+    <i class="fas fa-bars"></i>
+  </button>
+</nav>
+</head>
+<body class="bg-gray-900 text-white">
+    <section id="menu" class="py-12 bg-gray-800 text-white h-screen overflow-y-auto">
+        <div class="container mx-auto px-6 mt-12 mb-12 h-full">
+            <!-- Menu Makanan -->
+            <div class="mb-12">
+                <h2 class="text-3xl font-semibold text-center text-yellow-500 mb-8">Menu Makanan</h2>
+                <ul class="space-y-4">
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Lalapan</span><span>Rp 30.000</span></li>
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Ikan Goreng Crispy + Nasi + Sayur</span><span>Rp 30.000</span></li>
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Ayam Geprek + Nasi + Sayur</span><span>Rp 30.000</span></li>
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Udang Crispy + Nasi + Sayur</span><span>Rp 30.000</span></li>
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Cumi Crispy + Nasi + Sayur</span><span>Rp 30.000</span></li>
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Nasi Goreng + Telur Dadar</span><span>Rp 15.000</span></li>
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Mie Goreng Telur Ceplok</span><span>Rp 15.000</span></li>
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Mie Ayam</span><span>Rp 10.000</span></li>
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Mie Dang</span><span>Rp 15.000</span></li>
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Telur Rebus</span><span>Rp 4.000</span></li>
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Mie Rebus</span><span>Rp 8.000</span></li>
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Nasi Putih</span><span>Rp 5.000</span></li>
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Kacang</span><span>Rp 2.000</span></li>
+                </ul>
+            </div>
+
+            <hr class="border-gray-600 my-8">
+
+            <!-- Menu Minuman dan Gorengan -->
+            <div>
+                <h2 class="text-3xl font-semibold text-center text-yellow-500 mb-8">Minuman dan Gorengan</h2>
+                <ul class="space-y-4">
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Kopi Susu</span><span>Rp 10.000</span></li>
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Kopi Hitam</span><span>Rp 8.000</span></li>
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Teh Hangat</span><span>Rp 8.000</span></li>
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Es Teh</span><span>Rp 8.000</span></li>
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Milo Hangat</span><span>Rp 10.000</span></li>
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Milo Dingin</span><span>Rp 10.000</span></li>
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Jus Alpukat</span><span>Rp 18.000</span></li>
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Jus Jeruk</span><span>Rp 15.000</span></li>
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Gorengan</span><span>Rp 5.000</span></li>
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Roti Bakar</span><span>Rp 5.000</span></li>
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Air Botol</span><span>Rp 5.000</span></li>
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Air Gelas</span><span>Rp 2.000</span></li>
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Sarabbak</span><span>Rp 5.000</span></li>
+                    <li class="flex justify-between text-lg border-b border-gray-600 pb-2"><span>Extrajos susu</span><span>Rp 10.000</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

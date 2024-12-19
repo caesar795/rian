@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marina Cafe</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <style>
+    body { overflow: hidden; }
+    nav a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-roboto">
+
+<!-- Navbar -->
+<nav class="bg-blue-800 bg-opacity-80 rounded-lg shadow-lg px-6 py-4 fixed top-5 left-5 right-5 z-10 flex justify-between items-center">
+  <a href="#" class="text-yellow-400 font-bold text-lg">Marina Cafe</a>
+  <div class="hidden md:flex space-x-6">
+    <a href="home.html" class="hover:text-yellow-400 transition">Home</a>
+    <a href="menu.html" class="hover:text-yellow-400 transition">Menu</a>
+    <a href="kontak.html" class="hover:text-yellow-400 transition">Kontak</a>
+    <a href="alamat.html" class="hover:text-yellow-400 transition">Alamat</a>
+  </div>
+  <button id="hamburger-btn" class="md:hidden text-white text-xl">
+    <i class="fas fa-bars"></i>
+  </button>
+</nav>
+
+<!-- Dropdown Menu -->
+<div id="dropdown-menu" class="hidden absolute top-16 right-5 bg-blue-800 bg-opacity-95 rounded-lg shadow-lg p-4 space-y-4 md:hidden">
+  <a href="home.html" class="block hover:text-yellow-400 transition">Home</a>
+  <a href="menu.html" class="block hover:text-yellow-400 transition">Menu</a>
+  <a href="kontak.html" class="block hover:text-yellow-400 transition">Kontak</a>
+  <a href="alamat.html" class="block hover:text-yellow-400 transition">Alamat</a>
+</div>
+
+<!-- Header -->
+<header id="home" class="h-screen flex items-center justify-center text-center text-yellow-400 bg-cover bg-center" style="background-image: url('logo.jpg');">
+  <div class="bg-black bg-opacity-70 p-8 rounded">
+    <h1 class="text-5xl font-bold">Selamat Datang di Marina Cafe</h1>
+    <p class="mt-6 text-xl">KURANG ATAU LEBIH, SETIAP REZEKI PERLU DIRAYAKAN DENGAN MAMPIR DI MARINA CAFE</p>
+  </div>
+</header>
+
+<!-- Menu Section -->
+ <section id="menu" class="py-12 bg-gray-800 text-white h-screen overflow-y-auto">
+  <div class="container mx-auto px-6 h-full">
+    <!-- Menu Makanan -->
+    <div class="mb-12">
+      <h2 class="text-3xl font-semibold text-center text-yellow-500 mb-6">Menu Makanan</h2>
+      <ul class="space-y-4">
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Lalapan</span>
+          <span>Rp 30.000</span>
+        </li>
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Ikan Goreng Crispy + Nasi + Sayur</span>
+          <span>Rp 30.000</span>
+        </li>
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Ayam Geprek + Nasi + Sayur</span>
+          <span>Rp 30.000</span>
+        </li>
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Udang Crispy + Nasi + Sayur</span>
+          <span>Rp 30.000</span>
+        </li>
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Cumi Crispy + Nasi + Sayur</span>
+          <span>Rp 30.000</span>
+        </li>
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Nasi Goreng + Telur Dadar</span>
+          <span>Rp 15.000</span>
+        </li>
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Mie Goreng Telur Ceplok</span>
+          <span>Rp 15.000</span>
+        </li>
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Mie Ayam</span>
+          <span>Rp 10.000</span>
+        </li>
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Mie Udang</span>
+          <span>Rp 15.000</span>
+        </li>
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Telur Rebus</span>
+          <span>Rp 4.000</span>
+        </li>
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Mie Rebus</span>
+          <span>Rp 8.000</span>
+        </li>
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Nasi Putih</span>
+          <span>Rp 5.000</span>
+        </li>
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Kacang</span>
+          <span>Rp 2.000</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Menu Minuman dan Gorengan -->
+    <div>
+      <h2 class="text-3xl font-semibold text-center text-yellow-500 mb-6">Minuman dan Gorengan</h2>
+      <ul class="space-y-4">
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Kopi Susu</span>
+          <span>Rp 10.000</span>
+        </li>
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Kopi Hitam</span>
+          <span>Rp 8.000</span>
+        </li>
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Teh Hangat</span>
+          <span>Rp 8.000</span>
+        </li>
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Es Teh</span>
+          <span>Rp 8.000</span>
+        </li>
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Milo Hangat</span>
+          <span>Rp 10.000</span>
+        </li>
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Milo Dingin</span>
+          <span>Rp 10.000</span>
+        </li>
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Jus Alpokat</span>
+          <span>Rp 18.000</span>
+        </li>
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Jus Jeruk</span>
+          <span>Rp 15.000</span>
+        </li>
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Extrajos Susu</span>
+          <span>Rp 10.000</span>
+        </li>
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Sarabak</span>
+          <span>Rp 5.000</span>
+        </li>
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Gorengan</span>
+          <span>Rp 5.000</span>
+        </li>
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Roti Bakar</span>
+          <span>Rp 5.000</span>
+        </li>
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Air Botol</span>
+          <span>Rp 5.000</span>
+        </li>
+        <li class="flex justify-between text-lg border-b border-gray-600 pb-2">
+          <span>Air Gelas</span>
+          <span>Rp 2.000</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Alamat Section -->
+<section id="alamat" class="py-12 bg-gray-900">
+  <h3 class="text-3xl font-bold text-center mb-6">Alamat Kami</h3>
+  <p class="text-center"><i class="fas fa-map-marker-alt"></i> Binanga Sombaiya, Selayar</p>
+</section>
+
+<!-- Map -->
+<div id="map" class="h-96 my-12 mx-6 rounded-lg"></div>
+
+<!-- Kontak Section -->
+<section id="kontak" class="py-12 bg-gray-900">
+  <h3 class="text-3xl font-bold text-center mb-6">Hubungi Kami</h3>
+  <div class="text-center">
+    <p><i class="fas fa-phone-alt"></i> Telepon: +62 812 3456 7890</p>
+    <p><i class="fas fa-envelope"></i> Email: info@marinacafe.com</p>
+  </div>
+</section>
+
+<script>
+        // Hamburger Menu
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+
+        hamburgerBtn.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('hidden');
+        });
+
+        // Leaflet Map Initialization
+        console.log("Initializing map..."); // Debugging line
+        const map = L.map('map').setView([-6.3243637, 120.4740099], 16); // Coordinates of Marina Cafe
+
+        // Tile Layer for the Map
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Add Marker for Marina Cafe
+        L.marker([-6.3243637, 120.4740099]).addTo(map).bindPopup(`
+            <b>Marina Cafe</b><br>Binanga Sombaiya, Selayar
+        `);
+
+        // Fetch and Add GeoJSON Data for Mesjid
+        fetch("./mesjid.geojson")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log("Mesjid GeoJSON Loaded:", data); // Debugging line
+                L.geoJSON(data, {
+                    pointToLayer: (feature, latlng) => L.marker(latlng),
+                    onEachFeature: (feature, layer) => {
+                        if (feature.properties && feature.properties["Nama Mesjid"]) {
+                            layer.bindPopup(`<strong>Nama Mesjid:</strong> ${feature.properties["Nama Mesjid"]}`);
+                        }
+                    }
+                }).addTo(map);
+            })
+            .catch(err => {
+                console.error("Error loading Mesjid GeoJSON:", err); // Debugging line
+            });
+
+        // Fetch and Add GeoJSON Data for Sekolah
+        fetch("./sekolah.geojson")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log("Sekolah GeoJSON Loaded:", data); // Debugging line
+                L.geoJSON(data, {
+                    onEachFeature: (feature, layer) => {
+                        if (feature.properties && feature.properties["Nama Sekolah diKota Selayar"]) {
+                            layer.bindPopup(`<strong>Nama Sekolah:</strong> ${feature.properties["Nama Sekolah diKota Selayar"]}`);
+                        }
+                    }
+                }).addTo(map);
+            })
+            .catch(err => {
+                console.error("Error loading Sekolah GeoJSON:", err); // Debugging line
+            });
+    </script>
+
+</body>
+</html>

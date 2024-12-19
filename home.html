@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Add Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+ <!-- Navbar -->
+    <nav class="bg-blue-800 bg-opacity-80 rounded-lg shadow-lg px-6 py-4 fixed top-5 left-5 right-5 z-10 flex justify-between items-center">
+        <a href="#" class="text-yellow-400 font-bold text-lg">Marina Cafe</a>
+        <div class="hidden md:flex space-x-6">
+            <a href="home.html" class="hover:text-yellow-400 transition">Home</a>
+            <a href="menu.html" class="hover:text-yellow-400 transition">Menu</a>
+            <a href="kontak.html" class="hover:text-yellow-400 transition">Kontak</a>
+            <a href="alamat.html" class="hover:text-yellow-400 transition">Alamat</a>
+        </div>
+        <button id="hamburger-btn" class="md:hidden text-white text-xl">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+<body>
+    <!-- Header -->
+    <header id="home" class="h-screen flex items-center justify-center text-center text-yellow-400 bg-cover bg-center" style="background-image: url('logo.jpg');">
+        <div class="bg-black bg-opacity-70 p-8 rounded">
+            <h1 class="text-5xl font-bold">Selamat Datang di Marina Cafe</h1>
+            <p class="mt-6 text-xl">KURANG ATAU LEBIH, SETIAP REZEKI PERLU DIRAYAKAN DENGAN MAMPIR DI MARINA CAFE</p>
+        </div>
+    </header>
+</body>
+</html>
